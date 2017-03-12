@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="gdb," />
 
 
 
@@ -87,19 +87,46 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="What is gdb?gdb 是 GNU Debugger 的缩写，用来调试程序，支持的语言有[1]：
+
+Ada
+C
+C++
+Objective-C
+Free Pascal
+Fortran
+Java
+
+小试牛刀写一个简单的小程序，然后用 gdb 调试一下。123456789#include &amp;lt;stdio.h&amp;gt;int main(void)&amp;#123;    int i;    scan">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://xunsuan.github.io/2017/03/01/hello-world/index.html">
+<meta property="og:title" content="gdb 基本用法">
+<meta property="og:url" content="https://xunsuan.github.io/2017/03/12/gdb/index.html">
 <meta property="og:site_name" content="XunSuan's Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-03-01T07:24:16.113Z">
+<meta property="og:description" content="What is gdb?gdb 是 GNU Debugger 的缩写，用来调试程序，支持的语言有[1]：
+
+Ada
+C
+C++
+Objective-C
+Free Pascal
+Fortran
+Java
+
+小试牛刀写一个简单的小程序，然后用 gdb 调试一下。123456789#include &amp;lt;stdio.h&amp;gt;int main(void)&amp;#123;    int i;    scan">
+<meta property="og:updated_time" content="2017-03-12T11:15:38.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="gdb 基本用法">
+<meta name="twitter:description" content="What is gdb?gdb 是 GNU Debugger 的缩写，用来调试程序，支持的语言有[1]：
+
+Ada
+C
+C++
+Objective-C
+Free Pascal
+Fortran
+Java
+
+小试牛刀写一个简单的小程序，然后用 gdb 调试一下。123456789#include &amp;lt;stdio.h&amp;gt;int main(void)&amp;#123;    int i;    scan">
 
 
 
@@ -127,13 +154,13 @@ Quick">
 
 
 
-  <link rel="canonical" href="https://xunsuan.github.io/2017/03/01/hello-world/"/>
+  <link rel="canonical" href="https://xunsuan.github.io/2017/03/12/gdb/"/>
 
 
 
 
 
-  <title> Hello World | XunSuan's Blog </title>
+  <title> gdb 基本用法 | XunSuan's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -252,7 +279,7 @@ Quick">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://xunsuan.github.io/2017/03/01/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://xunsuan.github.io/2017/03/12/gdb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xun Suan">
@@ -273,7 +300,7 @@ Quick">
             
             
               
-                Hello World
+                gdb 基本用法
               
             
           </h1>
@@ -288,8 +315,8 @@ Quick">
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-01T15:24:16+08:00">
-                2017-03-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-12T16:38:00+08:00">
+                2017-03-12
               </time>
             
 
@@ -307,8 +334,8 @@ Quick">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/01/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/01/hello-world/" itemprop="commentCount"></span>
+                <a href="/2017/03/12/gdb/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/12/gdb/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -334,15 +361,29 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="What-is-gdb"><a href="#What-is-gdb" class="headerlink" title="What is gdb?"></a>What is gdb?</h1><p><code>gdb</code> 是 <code>GNU Debugger</code> 的缩写，用来调试程序，支持的语言有[1]：</p>
+<ul>
+<li>Ada</li>
+<li>C</li>
+<li>C++</li>
+<li>Objective-C</li>
+<li>Free Pascal</li>
+<li>Fortran</li>
+<li>Java</li>
+</ul>
+<h1 id="小试牛刀"><a href="#小试牛刀" class="headerlink" title="小试牛刀"></a>小试牛刀</h1><p>写一个简单的小程序，然后用 <code>gdb</code> 调试一下。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">int main(void)</div><div class="line">&#123;</div><div class="line">    int i;</div><div class="line">    scanf("%d, &amp;i);</div><div class="line">    printf("i = %d\n", i);</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcc main.c -std=C99</div></pre></td></tr></table></figure></p>
+<p>为了方便 <code>gdb</code> 调试，窝们加一个 <code>-g</code> 参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcc main.c -g -std=C99</div></pre></td></tr></table></figure></p>
+<p>不出问题的话应该会有一个 <code>a.out</code> 文件。<br>窝们用 gdb 调试它：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gdb a.out</div></pre></td></tr></table></figure></p>
+<p>不出问题的话应该可以看到一个这样的界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1</div><div class="line">Copyright (C) 2016 Free Software Foundation, Inc.</div><div class="line">License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;</div><div class="line">This is free software: you are free to change and redistribute it.</div><div class="line">There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot;</div><div class="line">and &quot;show warranty&quot; for details.</div><div class="line">This GDB was configured as &quot;x86_64-linux-gnu&quot;.</div><div class="line">Type &quot;show configuration&quot; for configuration details.</div><div class="line">For bug reporting instructions, please see:</div><div class="line">&lt;http://www.gnu.org/software/gdb/bugs/&gt;.</div><div class="line">Find the GDB manual and other documentation resources online at:</div><div class="line">&lt;http://www.gnu.org/software/gdb/documentation/&gt;.</div><div class="line">For help, type &quot;help&quot;.</div><div class="line">Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;...</div><div class="line">Reading symbols from a.out...(no debugging symbols found)...done.</div><div class="line">(gdb)</div></pre></td></tr></table></figure></p>
+<p><code>(gdb)</code> 就是 <code>gdb</code> 的提示符，类似 <code>Unix</code> 的 <code>$</code> 和 <code>#</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(gdb) break 9</div></pre></td></tr></table></figure>
+<p>在 9 行中下一个断点，把程序跑起来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(gdb) run</div></pre></td></tr></table></figure></p>
+<p>不出问题的话程序应该断在了第9行，然后输入 <code>233</code>，回车。<br>现在的话是断在第9(10)行了。窝们可以去看一下它的变量之类的操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(gdb) print i</div></pre></td></tr></table></figure></p>
+<p>返回结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(gdb) print i</div><div class="line">$1 = 233</div><div class="line">(gdb)</div></pre></td></tr></table></figure></p>
+<p>还可以修改 <code>i</code> 的值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(gdb) set i = 233333</div></pre></td></tr></table></figure></p>
+<h1 id="Next-和-Step-指令"><a href="#Next-和-Step-指令" class="headerlink" title="Next 和 Step 指令"></a>Next 和 Step 指令</h1><p><code>next</code> 指令会步过，但是不会跟踪函数(步入)，而 <code>step</code> 会步入函数。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>1 <a href="https://sourceware.org/gdb/current/onlinedocs/gdb/Supported-Languages.html#Supported-Languages" target="_blank" rel="external">GDB Documentation - Supported Languages.</a></p>
 
       
     </div>
@@ -364,6 +405,12 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/gdb/" rel="tag"># gdb</a>
+          
+        </div>
+      
 
       
         
@@ -373,15 +420,15 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/05/my-blog-is-now-uses-disqus/" rel="next" title="Disqus">
+                <i class="fa fa-chevron-left"></i> Disqus
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/01/hellohexo/" rel="prev" title="hellohexo">
-                hellohexo <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -506,7 +553,7 @@ Quick">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-gdb"><span class="nav-number">1.</span> <span class="nav-text">What is gdb?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小试牛刀"><span class="nav-number">2.</span> <span class="nav-text">小试牛刀</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Next-和-Step-指令"><span class="nav-number">3.</span> <span class="nav-text">Next 和 Step 指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -637,9 +684,9 @@ Quick">
 
     <script type="text/javascript">
       var disqus_shortname = 'xunsuan-blog';
-      var disqus_identifier = '2017/03/01/hello-world/';
+      var disqus_identifier = '2017/03/12/gdb/';
 
-      var disqus_title = "Hello World";
+      var disqus_title = "gdb 基本用法";
 
 
       function run_disqus_script(disqus_script) {
