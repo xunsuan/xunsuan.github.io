@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="c/c++," />
 
 
 
@@ -87,16 +87,25 @@
 
 
 
-<meta name="description" content="这个方法只限于 NeXT 主题，其他的窝也不太清楚。">
+<meta name="description" content="注意：这只是 Linux 平台下的操作。
+nohupLinux 下有个叫 nohup，它可以把输出强行重定向到文本中。配合 &amp;amp; 可以达到运行在后台。1$ nohup ./test &amp;amp;
+将输出到 nohup.out 文件中。
+fork() &amp;amp; exit()那么问题来了，如何在 C/C++（依赖 POSIX）里实现捏？Linux 下有个叫做 fork() 的函数，它可以新建一个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Disqus">
-<meta property="og:url" content="https://xunsuan.github.io/2017/03/05/my-blog-is-now-uses-disqus/index.html">
+<meta property="og:title" content="让你的 C/C++ 程序运行在后台">
+<meta property="og:url" content="https://xunsuan.github.io/2017/03/13/run-your-c-cpp-program-in-background/index.html">
 <meta property="og:site_name" content="XunSuan's Blog">
-<meta property="og:description" content="这个方法只限于 NeXT 主题，其他的窝也不太清楚。">
-<meta property="og:updated_time" content="2017-03-05T11:31:31.863Z">
+<meta property="og:description" content="注意：这只是 Linux 平台下的操作。
+nohupLinux 下有个叫 nohup，它可以把输出强行重定向到文本中。配合 &amp;amp; 可以达到运行在后台。1$ nohup ./test &amp;amp;
+将输出到 nohup.out 文件中。
+fork() &amp;amp; exit()那么问题来了，如何在 C/C++（依赖 POSIX）里实现捏？Linux 下有个叫做 fork() 的函数，它可以新建一个">
+<meta property="og:updated_time" content="2017-03-13T10:29:08.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Disqus">
-<meta name="twitter:description" content="这个方法只限于 NeXT 主题，其他的窝也不太清楚。">
+<meta name="twitter:title" content="让你的 C/C++ 程序运行在后台">
+<meta name="twitter:description" content="注意：这只是 Linux 平台下的操作。
+nohupLinux 下有个叫 nohup，它可以把输出强行重定向到文本中。配合 &amp;amp; 可以达到运行在后台。1$ nohup ./test &amp;amp;
+将输出到 nohup.out 文件中。
+fork() &amp;amp; exit()那么问题来了，如何在 C/C++（依赖 POSIX）里实现捏？Linux 下有个叫做 fork() 的函数，它可以新建一个">
 
 
 
@@ -124,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="https://xunsuan.github.io/2017/03/05/my-blog-is-now-uses-disqus/"/>
+  <link rel="canonical" href="https://xunsuan.github.io/2017/03/13/run-your-c-cpp-program-in-background/"/>
 
 
 
 
 
-  <title> Disqus | XunSuan's Blog </title>
+  <title> 让你的 C/C++ 程序运行在后台 | XunSuan's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -249,7 +258,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://xunsuan.github.io/2017/03/05/my-blog-is-now-uses-disqus/">
+    <link itemprop="mainEntityOfPage" href="https://xunsuan.github.io/2017/03/13/run-your-c-cpp-program-in-background/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xun Suan">
@@ -270,7 +279,7 @@
             
             
               
-                Disqus
+                让你的 C/C++ 程序运行在后台
               
             
           </h1>
@@ -285,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-05T19:23:33+08:00">
-                2017-03-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-13T18:13:35+08:00">
+                2017-03-13
               </time>
             
 
@@ -304,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/05/my-blog-is-now-uses-disqus/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/05/my-blog-is-now-uses-disqus/" itemprop="commentCount"></span>
+                <a href="/2017/03/13/run-your-c-cpp-program-in-background/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/13/run-your-c-cpp-program-in-background/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -331,9 +340,12 @@
       
 
       
-        <p>这个方法只限于 <code>NeXT</code> 主题，其他的窝也不太清楚。<br><a id="more"></a></p>
-<h1 id="Hexo下的配置方法"><a href="#Hexo下的配置方法" class="headerlink" title="Hexo下的配置方法"></a>Hexo下的配置方法</h1><p>窝目前使用的是 <code>NeXT</code> 主题，<br>在 <code>NeXT</code> 目录的 <code>_config.yml</code> 中找到 <code>disqus_shortname</code> 填写为乃的 <code>Disqus ShortName</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
-<p>看下效果。</p>
+        <p>注意：这只是 <code>Linux</code> 平台下的操作。</p>
+<h1 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a>nohup</h1><p>Linux 下有个叫 nohup，它可以把输出强行重定向到文本中。<br>配合 <code>&amp;</code> 可以达到运行在后台。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nohup ./test &amp;</div></pre></td></tr></table></figure></p>
+<p>将输出到 <code>nohup.out</code> 文件中。</p>
+<h1 id="fork-amp-exit"><a href="#fork-amp-exit" class="headerlink" title="fork() &amp; exit()"></a>fork() &amp; exit()</h1><p>那么问题来了，如何在 <code>C/C++</code>（依赖 <code>POSIX</code>）里实现捏？<br><code>Linux</code> 下有个叫做 <code>fork()</code> 的函数，它可以新建一个子进程（注意：不是子线程）。<br>我们可以利用它来让程序运行在后台。</p>
+<p>上代码！<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">pid_t</span> pid = fork();</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!pid) <span class="comment">// pid==0</span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// <span class="doctag">TODO:</span> child process</span></div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (pid &gt; <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// <span class="doctag">TODO:</span> parent process</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// <span class="doctag">TODO:</span> fork failed</span></div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在 <code>child process</code> 中填写乃的代码就阔以辣。</p>
 
       
     </div>
@@ -357,7 +369,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/c-c/" rel="tag"># c/c++</a>
           
         </div>
       
@@ -370,8 +382,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/05/transparent-terminal-i3wm/" rel="next" title="i3wm 终端透明">
-                <i class="fa fa-chevron-left"></i> i3wm 终端透明
+              <a href="/2017/03/12/this-pointer/" rel="next" title="this_pointer">
+                <i class="fa fa-chevron-left"></i> this_pointer
               </a>
             
           </div>
@@ -379,10 +391,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/12/gdb/" rel="prev" title="gdb 基本用法">
-                gdb 基本用法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -507,7 +515,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo下的配置方法"><span class="nav-number">1.</span> <span class="nav-text">Hexo下的配置方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nohup"><span class="nav-number">1.</span> <span class="nav-text">nohup</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fork-amp-exit"><span class="nav-number">2.</span> <span class="nav-text">fork() & exit()</span></a></li></ol></div>
             
 
           </div>
@@ -638,9 +646,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'xunsuan-blog';
-      var disqus_identifier = '2017/03/05/my-blog-is-now-uses-disqus/';
+      var disqus_identifier = '2017/03/13/run-your-c-cpp-program-in-background/';
 
-      var disqus_title = "Disqus";
+      var disqus_title = "让你的 C/C++ 程序运行在后台";
 
 
       function run_disqus_script(disqus_script) {
