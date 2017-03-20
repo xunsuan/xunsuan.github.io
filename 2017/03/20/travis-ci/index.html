@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="这里是 Travis CI 的官网：https://travis-ci.org/先注册一个帐号。当然，可以用 GitHub 登录。">
+<meta name="description" content="这里是 Travis CI 的官网：here
+先注册一个帐号。当然，可以用 GitHub 登录。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用 travis-ci 来测试你的项目">
 <meta property="og:url" content="https://xunsuan.github.io/2017/03/20/travis-ci/index.html">
 <meta property="og:site_name" content="XunSuan's Blog">
-<meta property="og:description" content="这里是 Travis CI 的官网：https://travis-ci.org/先注册一个帐号。当然，可以用 GitHub 登录。">
-<meta property="og:updated_time" content="2017-03-20T06:39:06.452Z">
+<meta property="og:description" content="这里是 Travis CI 的官网：here
+先注册一个帐号。当然，可以用 GitHub 登录。">
+<meta property="og:updated_time" content="2017-03-20T06:43:37.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 travis-ci 来测试你的项目">
-<meta name="twitter:description" content="这里是 Travis CI 的官网：https://travis-ci.org/先注册一个帐号。当然，可以用 GitHub 登录。">
+<meta name="twitter:description" content="这里是 Travis CI 的官网：here
+先注册一个帐号。当然，可以用 GitHub 登录。">
 
 
 
@@ -331,7 +334,8 @@
       
 
       
-        <p>这里是 Travis CI 的官网：<a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a><br>先注册一个帐号。当然，可以用 GitHub 登录。<br><a id="more"></a></p>
+        <p>这里是 Travis CI 的官网：<a href="https://travis-ci.org/" target="_blank" rel="external">here</a></p>
+<p>先注册一个帐号。当然，可以用 GitHub 登录。<br><a id="more"></a></p>
 <h1 id="Hello-Travis-CI"><a href="#Hello-Travis-CI" class="headerlink" title="Hello Travis CI"></a>Hello Travis CI</h1><p>这是一个 yml 格式的文件，是纯文本，可以用 Vim Notepad++ 之类的打开。<br>首先创建一个 GitHub 项目，然后写一个 <code>CMakeLists.txt</code> 和一个 <code>main.cpp</code>。<br>在乃的项目目录里面写一个叫做 <code>.travis.yml</code> 的文件，这个是 Travis CI 的配置文件。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> cpp <span class="comment"># 当然，乃也可以写其他语言。</span></div><div class="line"><span class="attr">compiler:</span></div><div class="line"><span class="bullet">  -</span> gcc <span class="comment"># 编译器</span></div><div class="line"></div><div class="line"><span class="attr">addons:</span></div><div class="line"><span class="attr">  apt:</span></div><div class="line"><span class="attr">    sources:</span></div><div class="line"><span class="bullet">      -</span> ubuntu-toolchain-r-test</div><div class="line"><span class="attr">    packages:</span></div><div class="line">      <span class="comment"># 一些软件包</span></div><div class="line"><span class="bullet">      -</span> cmake</div><div class="line"></div><div class="line"><span class="attr">install:</span> <span class="comment"># 首次执行，就比如在这里安装一些库之类的操作。</span></div><div class="line"><span class="bullet"> -</span> gcc --version</div><div class="line"></div><div class="line"><span class="attr">script:</span> <span class="comment"># 这个就是编译的时候了</span></div><div class="line"><span class="bullet">  -</span> mkdir build</div><div class="line"><span class="bullet">  -</span> cd build</div><div class="line"><span class="bullet">  -</span> cmake ..</div><div class="line"><span class="bullet">  -</span> make</div></pre></td></tr></table></figure>
 <p>以上就是基本的 <code>.travis.yml</code> 编写了。</p>
